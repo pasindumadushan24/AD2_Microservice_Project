@@ -14,7 +14,8 @@ public class Transaction {
     private Long userId;
     private Double amount;
     private String cardNumber;
-    private String status; // SUCCESS, FAILED
+    private String status;
+
     private LocalDateTime timestamp;
     private String receiptNumber;
 
