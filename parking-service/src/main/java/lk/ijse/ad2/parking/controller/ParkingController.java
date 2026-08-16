@@ -24,6 +24,7 @@ public class ParkingController {
     @Autowired
     private ParkingSpaceRepository parkingSpaceRepository;
 
+
     @Autowired
     private ReservationRepository reservationRepository;
 
