@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
+
     @Autowired
     private VehicleService vehicleService;
 
