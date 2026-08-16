@@ -161,4 +161,46 @@ public class ParkingController {
         List<Reservation> reservations = reservationRepository.findByUserId(userId);
         return ResponseEntity.ok(reservations);
     }
+
+    @PostMapping("/spaces/vehicle/{vehicleId}/entry")
+    public ResponseEntity<?> processVehicleEntry(@PathVariable Long vehicleId) {
+        List<Reservation> reservations = reservationRepository.findByVehicleId(vehicleId);
+        Optional<Reservation> activeOpt = reservations.stream()
+                .filter(r -> "ACTIVE".equals(r.getStatus()))
+                .findFirst();
+        if (activeOpt.isPresent()) {
+            Reservation reservation = activeOpt.get();
+            Optional<ParkingSpace> spaceOpt = parkingSpaceRepository.findById(reservation.getSpaceId());
+            if (spaceOpt.isPresent()) {
+                ParkingSpace space = spaceOpt.get();
+                space.setStatus("OCCUPIED");
+                parkingSpaceRepository.save(space);
+                return ResponseEntity.ok("Vehicle entry registered. Space " + space.getSpaceCode() + " status updated to OCCUPIED.");
+            }
+        }
+        return ResponseEntity.badRequest().body("No active reservation found for vehicle ID: " + vehicleId);
+    }
+
+    @PostMapping("/spaces/vehicle/{vehicleId}/exit")
+    public ResponseEntity<?> processVehicleExit(@PathVariable Long vehicleId) {
+        List<Reservation> reservations = reservationRepository.findByVehicleId(vehicleId);
+        Optional<Reservation> activeOpt = reservations.stream()
+                .filter(r -> "ACTIVE".equals(r.getStatus()))
+                .findFirst();
+        if (activeOpt.isPresent()) {
+            Reservation reservation = activeOpt.get();
+            reservation.setStatus("COMPLETED");
+            reservation.setEndTime(LocalDateTime.now());
+            reservationRepository.save(reservation);
+
+            Optional<ParkingSpace> spaceOpt = parkingSpaceRepository.findById(reservation.getSpaceId());
+            if (spaceOpt.isPresent()) {
+                ParkingSpace space = spaceOpt.get();
+                space.setStatus("AVAILABLE");
+                parkingSpaceRepository.save(space);
+                return ResponseEntity.ok("Vehicle exit registered. Space " + space.getSpaceCode() + " status updated to AVAILABLE.");
+            }
+        }
+        return ResponseEntity.badRequest().body("No active reservation found for vehicle ID: " + vehicleId);
+    }
 }
