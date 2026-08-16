@@ -74,6 +74,7 @@ Import the JSON file into Postman and send requests through the API Gateway.
 http://localhost:8080
 ```
 
+
 ##  Eureka Dashboard
 
 After starting the services, registered services can be viewed at:
