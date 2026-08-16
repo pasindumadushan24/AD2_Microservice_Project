@@ -16,7 +16,8 @@ public class Vehicle {
     private String model;
     private String color;
     private Long userId;
-    private String status; // IN_PARKING, OUTSIDE
+    private String status;
+
 
     public Vehicle() {}
 
