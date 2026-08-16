@@ -52,6 +52,7 @@ public class PaymentController {
             }
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No receipt generated. Transaction failed.");
         }
+
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Transaction not found.");
     }
 }
