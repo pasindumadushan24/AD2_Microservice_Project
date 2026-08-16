@@ -22,6 +22,7 @@ public class Reservation {
 
     public Reservation() {}
 
+
     public Reservation(Long id, Long spaceId, Long userId, Long vehicleId, LocalDateTime startTime, LocalDateTime endTime, String status, Double totalAmount) {
         this.id = id;
         this.spaceId = spaceId;
