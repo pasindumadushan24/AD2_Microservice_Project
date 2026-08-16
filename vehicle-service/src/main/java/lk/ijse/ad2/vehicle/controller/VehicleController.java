@@ -27,6 +27,7 @@ public class VehicleController {
         }
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<?> getVehicleById(@PathVariable Long id) {
         VehicleDTO vehicleDTO = vehicleService.getVehicleById(id);
