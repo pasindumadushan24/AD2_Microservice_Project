@@ -12,7 +12,8 @@ public class ParkingSpace {
     private String spaceCode;
     private String location;
     private String zone;
-    private String status; // AVAILABLE, RESERVED, OCCUPIED
+    private String status;
+
     private Double pricePerHour;
     private Long ownerId;
 
