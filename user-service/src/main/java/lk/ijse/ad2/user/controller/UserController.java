@@ -31,6 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
+
     public ResponseEntity<?> login(@RequestBody User loginRequest) {
         Optional<User> userOpt = userRepository.findByUsername(loginRequest.getUsername());
         if (userOpt.isPresent() && userOpt.get().getPassword().equals(loginRequest.getPassword())) {
