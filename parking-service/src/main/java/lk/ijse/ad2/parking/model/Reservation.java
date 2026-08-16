@@ -15,7 +15,9 @@ public class Reservation {
     private Long vehicleId;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private String status; // ACTIVE, COMPLETED, CANCELLED
+    private String status;
+
+
     private Double totalAmount;
 
     public Reservation() {}
@@ -51,6 +53,7 @@ public class Reservation {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
 
     public Double getTotalAmount() { return totalAmount; }
     public void setTotalAmount(Double totalAmount) { this.totalAmount = totalAmount; }
