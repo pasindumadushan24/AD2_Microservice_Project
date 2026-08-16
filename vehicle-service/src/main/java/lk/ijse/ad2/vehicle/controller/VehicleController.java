@@ -15,6 +15,7 @@ import java.util.Optional;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
+
     @Autowired
     private VehicleRepository vehicleRepository;
 
