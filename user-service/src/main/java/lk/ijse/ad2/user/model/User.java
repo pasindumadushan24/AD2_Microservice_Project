@@ -16,7 +16,8 @@ public class User {
     private String password;
 
     private String email;
-    private String role; // DRIVER, OWNER
+    private String role;
+
 
     public User() {}
 
