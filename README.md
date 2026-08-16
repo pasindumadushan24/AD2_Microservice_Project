@@ -2,7 +2,7 @@
 
 A cloud-native, microservices-based backend application for managing users, vehicles, parking spaces, and payments.
 
-## 🏗️ Architecture
+##  Architecture
 
 The system uses **Spring Boot + Spring Cloud** microservices architecture.
 
@@ -34,7 +34,7 @@ API Gateway :8080
        MySQL
 ```
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 * Java 17+
 * Spring Boot 3.x
@@ -47,7 +47,8 @@ API Gateway :8080
 * Git & GitHub
 * Postman
 
-## 🗄️ Database Strategy
+
+##  Database Strategy
 
 The project follows the **Database-per-Service** pattern.
 
@@ -60,7 +61,7 @@ Payment Service    → spms_payment_db
 
 Each microservice has its own independent database.
 
-## 📡 API Testing
+##  API Testing
 
 A Postman collection containing the project APIs is included:
 
@@ -74,7 +75,8 @@ Import the JSON file into Postman and send requests through the API Gateway.
 http://localhost:8080
 ```
 
-## 🟢 Eureka Dashboard
+
+##  Eureka Dashboard
 
 After starting the services, registered services can be viewed at:
 
@@ -84,7 +86,7 @@ http://localhost:8761
 
 ![Eureka Dashboard](docs/screenshots/eureka_dashboard.png)
 
-## 🛠️ How to Run
+##  How to Run
 
 ### Prerequisites
 
@@ -134,7 +136,7 @@ Or use:
 .\start-all.ps1
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 Smart-Parking-Management-System/
@@ -153,7 +155,7 @@ Smart-Parking-Management-System/
 └── README.md
 ```
 
-## 🌿 Git Workflow
+##  Git Workflow
 
 The project uses Git and GitHub with feature branches.
 
@@ -165,7 +167,7 @@ main
 └── feature/payment-service
 ```
 
-## 🎯 Key Features
+##  Key Features
 
 * Microservices Architecture
 * API Gateway
@@ -177,6 +179,4 @@ main
 * Postman API Testing
 * Git & GitHub Feature Branching
 
-## 📄 License
 
-This project is developed for educational and academic purposes.
