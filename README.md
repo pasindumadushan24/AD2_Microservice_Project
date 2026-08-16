@@ -47,6 +47,7 @@ API Gateway :8080
 * Git & GitHub
 * Postman
 
+
 ##  Database Strategy
 
 The project follows the **Database-per-Service** pattern.
