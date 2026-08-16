@@ -177,6 +177,4 @@ main
 * Postman API Testing
 * Git & GitHub Feature Branching
 
-##  License
 
-This project is developed for educational and academic purposes.
