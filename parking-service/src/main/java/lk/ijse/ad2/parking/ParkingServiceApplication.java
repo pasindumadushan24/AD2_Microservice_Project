@@ -14,6 +14,7 @@ public class ParkingServiceApplication {
         SpringApplication.run(ParkingServiceApplication.class, args);
     }
 
+
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
