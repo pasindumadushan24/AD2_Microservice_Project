@@ -36,6 +36,7 @@ public class UserController {
         if (userOpt.isPresent() && userOpt.get().getPassword().equals(loginRequest.getPassword())) {
             return ResponseEntity.ok(userOpt.get());
         }
+
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
     }
 
